@@ -9,18 +9,18 @@ pipeline {
         stage('Build') {
             steps {
                 
-                    sh "mvn clean compile" 
+                    sh "mvn clean compile tomcat7:run" 
                 
             }
         }
 
-        stage('Deploy') {
-            steps {
+        // stage('Deploy') {
+        //     steps {
                 
-                    sh "mvn tomcat7:run"
+        //             sh "mvn tomcat7:run"
                 
-            }
-        }
+        //     }
+        // } 
     }
 }
 // pipeline {
