@@ -8,14 +8,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "mvn clean package"
+                sh "mvn clean compile"
             }
-        }
 
-        stage('Deploy') {
-            steps {
-                sh "mvn tomcat7:deploy"
-            }
+            post {
+                success {
+                    nohup mvn tomcat7:run &
+                }
+            }   
         }
     }
 }
