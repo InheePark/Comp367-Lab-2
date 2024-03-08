@@ -4,13 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                mvn clean compile 
+                script{
+                    mvn clean compile 
+                }
             }
         }
 
         stage('Deploy') {
             steps {
-                mvn tomcat7:run
+                script {
+                    mvn tomcat7:run
+                }
             }
         }
     }
