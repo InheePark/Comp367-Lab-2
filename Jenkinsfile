@@ -10,12 +10,11 @@ pipeline {
             steps {
                 sh "mvn clean compile"
             }
-
             post {
                 success {
-                    nohup "mvn tomcat7:run" &
+                    sh "nohup mvn tomcat7:run &"
                 }
-            }   
+            }
         }
     }
 }
