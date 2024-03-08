@@ -39,6 +39,8 @@
           <configuration>
             <port>9090</port>
             <path>/</path>
+            <server>TomcatServer</server>
+            <url>http://localhost:9090/manager/text</url>
           </configuration>
         </plugin>
         <plugin>
