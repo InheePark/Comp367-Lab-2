@@ -13,7 +13,7 @@ pipeline {
 
             post {
                 success {
-                    nohup mvn tomcat7:run &
+                    nohup "mvn tomcat7:run" &
                 }
             }   
         }
