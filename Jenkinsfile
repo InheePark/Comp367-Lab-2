@@ -4,16 +4,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script{
-                    mvn clean compile 
+                withMaven {
+                    sh "mvn clean compile" 
                 }
             }
         }
 
         stage('Deploy') {
             steps {
-                script {
-                    mvn tomcat7:run
+                withMaven {
+                    sh "mvn tomcat7:run"
                 }
             }
         }
